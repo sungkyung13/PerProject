@@ -14,6 +14,12 @@
     -fx-background-position: center;
 }
 
+.LoGoImage {
+    -fx-background-image: url(cloud.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
 .white {
     -fx-background-color: rgba(255, 255, 255, 0.8);
 }
@@ -23,12 +29,12 @@
 }
 
 .secondColor {
-    -fx-background-color: rgba(190, 214, 237, 0.5);
+    -fx-background-color: rgba(120, 120, 120, 0.5);
 
 }
 
 .thirdColor {
-    -fx-background-color: rgba(180, 203, 224, 0.5);
+    -fx-background-color: rgba(40, 40, 40, 0.5);
 }
 
 .fourthColor {
@@ -50,5 +56,9 @@
 }
 
 .shadow {
-    -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.5) , 10, 0 , 8 , 8) ;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5) , 10, 0 , 9 , 9) ;
+}
+
+.shadow2 {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3) , 10, 0 , 9 , 9);
 }

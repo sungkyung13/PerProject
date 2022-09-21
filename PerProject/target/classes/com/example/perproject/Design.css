@@ -50,5 +50,5 @@
 }
 
 .shadow {
-    -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.5) , 10, 0 , 8 , 8) ;
+    -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.5) , 10, 0 , 9 , 9) ;
 }

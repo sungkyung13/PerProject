@@ -11,14 +11,14 @@
       <Pane layoutX="23.0" layoutY="153.0" prefHeight="247.0" prefWidth="435.0" stylesheets="@Design.css">
          <styleClass>
             <String fx:value="round" />
-            <String fx:value="fourthColor" />
+            <String fx:value="secondColor" />
             <String fx:value="shadow" />
          </styleClass>
       </Pane>
-      <Pane layoutX="23.0" layoutY="454.0" prefHeight="247.0" prefWidth="435.0" stylesheets="@Design.css">
+      <Pane layoutX="23.0" layoutY="460.0" prefHeight="247.0" prefWidth="435.0" stylesheets="@Design.css">
          <styleClass>
             <String fx:value="round" />
-            <String fx:value="fourthColor" />
+            <String fx:value="secondColor" />
             <String fx:value="shadow" />
          </styleClass>
       </Pane>
