@@ -1,0 +1,54 @@
+.gray {
+    -fx-background-color: rgba(78, 23, 34, 0.5);
+}
+
+.image {
+    -fx-background-image: url(background.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.StudyImage {
+    -fx-background-image: url(reading-book.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.white {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+.firstColor {
+    -fx-background-color: rgba(161, 181, 200, 0.5);
+}
+
+.secondColor {
+    -fx-background-color: rgba(190, 214, 237, 0.5);
+
+}
+
+.thirdColor {
+    -fx-background-color: rgba(180, 203, 224, 0.5);
+}
+
+.fourthColor {
+    -fx-background-color: rgba(78, 88, 97, 0.5);
+}
+
+.firstColor {
+    -fx-background-color: rgba(129, 145, 161, 0.5);
+}
+
+.round {
+    -fx-background-radius: 10px;
+}
+
+.width {
+    -fx-border-width: 2px;
+    -fx-border-color: gray;
+    -fx-border-radius: 10px;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.5) , 10, 0 , 8 , 8) ;
+}
