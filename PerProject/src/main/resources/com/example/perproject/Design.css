@@ -49,6 +49,10 @@
     -fx-background-radius: 10px;
 }
 
+.round2 {
+    -fx-background-radius: 30px;
+}
+
 .width {
     -fx-border-width: 2px;
     -fx-border-color: gray;
@@ -61,4 +65,8 @@
 
 .shadow2 {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3) , 10, 0 , 9 , 9);
+}
+
+.BtShadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 7, 0, 2, 2);
 }
