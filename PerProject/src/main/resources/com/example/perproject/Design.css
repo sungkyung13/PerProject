@@ -20,6 +20,12 @@
     -fx-background-position: center;
 }
 
+.RoundImage {
+    -fx-background-image: url(round.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
 .white {
     -fx-background-color: rgba(255, 255, 255, 0.8);
 }
