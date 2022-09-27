@@ -7,12 +7,15 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 public class TimeController implements Initializable{
@@ -21,46 +24,46 @@ public class TimeController implements Initializable{
 	@FXML private Button pauseBtn;
 	@FXML private Button reStartBtn;
 	@FXML private Label timeLabel;
-	 private Boolean isStart = false; // 시작인지 판단할 필드.
-	 private Timeline timeLine; 
-	 private DoubleProperty timeSeconds = new SimpleDoubleProperty();
-	 private Duration time = Duration.ZERO;
-	 
-	 
+	private Boolean isStart = false; // 시작인지 판단할 필드.
+	private Timeline timeLine;
+	private DoubleProperty timeSeconds = new SimpleDoubleProperty();
+	private Duration time = Duration.ZERO;
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		timeLine = new Timeline(); // timeLine 객체 초기화
-        timeLine.setCycleCount(Timeline.INDEFINITE);
-        timeLine.play();
-		
+		timeLine.setCycleCount(Timeline.INDEFINITE);
+		timeLine.play();
+
 	}
-	
+
 	public void newButton(ActionEvent event){
 		timeLine.stop(); // 새로 시간을 측정하려면 timeLine이 초기화되야 하므로 stop()
-    	time = Duration.ZERO; // time의 값도 새로 측정 할 때마다 0이되어야 함.
-    	timeLabel.textProperty().bind(timeSeconds.asString()); // timeCheck 에 timeSeconds 값 대입
-    	isStart=true; //newButton을 클릭했으므로 isStart 값 true로
-    	if(isStart == true){ 
-        	
-        	 if (timeLine == null) {
-        		  // 딱히 할 거 없음.
-             } else {
-                 timeLine = new Timeline(
-                     new KeyFrame(Duration.millis(10),
-                     new EventHandler<ActionEvent>() {
-                         @Override
-                         public void handle(ActionEvent t) {
-                             Duration duration = ((KeyFrame)t.getSource()).getTime();
-                             time = time.add(duration);
-                             timeSeconds.set(time.toSeconds());
-                          }
-                     })
-                 );
-                 timeLine.setCycleCount(Timeline.INDEFINITE);
-                 timeLine.play();
-             }
-        	
-        }
+		time = Duration.ZERO; // time의 값도 새로 측정 할 때마다 0이되어야 함.
+		timeLabel.textProperty().bind(timeSeconds.asString()); // timeCheck 에 timeSeconds 값 대입
+		isStart=true; //newButton을 클릭했으므로 isStart 값 true로
+		if(isStart == true){
+
+			if (timeLine == null) {
+				// 딱히 할 거 없음.
+			} else {
+				timeLine = new Timeline(
+						new KeyFrame(Duration.millis(1000),
+								new EventHandler<ActionEvent>() {
+									@Override
+									public void handle(ActionEvent t) {
+										Duration duration = ((KeyFrame)t.getSource()).getTime();
+										time = time.add(duration);
+										timeSeconds.set(time.toSeconds());
+									}
+								})
+				);
+				timeLine.setCycleCount(Timeline.INDEFINITE);
+				timeLine.play();
+			}
+
+		}
 	}
 	public void pauseButton(ActionEvent event){
 		timeLine.stop(); //timeLine멈춤
@@ -68,8 +71,8 @@ public class TimeController implements Initializable{
 	public void reStartButton(ActionEvent event){
 		timeLine.play(); // timeLine 이어서 재시작
 	}
-	
- 
+
+
 
 
 }
