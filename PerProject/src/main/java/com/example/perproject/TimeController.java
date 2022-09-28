@@ -24,6 +24,9 @@ public class TimeController implements Initializable{
 	@FXML private Button pauseBtn;
 	@FXML private Button reStartBtn;
 	@FXML private Label timeLabel;
+	private int hours;
+	private int minutes;
+	private int seconds;
 	private Boolean isStart = false; // 시작인지 판단할 필드.
 	private Timeline timeLine;
 	private DoubleProperty timeSeconds = new SimpleDoubleProperty();
@@ -64,6 +67,24 @@ public class TimeController implements Initializable{
 			}
 
 		}
+	}
+	public void setTimeLabel(ActionEvent event) {
+		if (seconds == 60) {
+			seconds = 0;
+			minutes++;
+
+		}
+		if (minutes == 60) {
+			minutes = 0;
+			hours++;
+
+		}
+
+		String h = hours >= 10 ? String.valueOf(hours) : "0" + String.valueOf(hours);
+		String m = minutes >= 10 ? String.valueOf(minutes) : "0" + String.valueOf(minutes);
+		String s = seconds >= 10 ? String.valueOf(seconds) : "0" + String.valueOf(seconds);
+
+
 	}
 	public void pauseButton(ActionEvent event){
 		timeLine.stop(); //timeLine멈춤

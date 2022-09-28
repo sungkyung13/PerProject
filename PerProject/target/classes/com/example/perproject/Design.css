@@ -2,6 +2,14 @@
     -fx-background-color: rgba(78, 23, 34, 0.5);
 }
 
+.LoginBtn {
+    -fx-background-color: rgba(0, 0 ,0 ,0);
+    -fx-border-color: rgba(255, 255 ,255 ,255);
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+
 .btn:hover {
     -fx-border-color: black;
     -fx-border-width: 0px 0px 3px 0px;

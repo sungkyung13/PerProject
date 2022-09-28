@@ -15,7 +15,7 @@ public class SignUp {
 
     @FXML
     private Button changeBtn3;
-    public void change3Scene() {
+    public void changeScene3() {
         try {
             Parent nextScene
                     = FXMLLoader.load(getClass().getResource("SignUpFini.fxml"));
@@ -30,7 +30,7 @@ public class SignUp {
 
     @FXML
     private Label changeBtn4;
-    public void change4Scene() {
+    public void changeScene4() {
         try {
             Parent nextScene
                     = FXMLLoader.load(getClass().getResource("Login.fxml"));
