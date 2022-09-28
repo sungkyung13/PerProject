@@ -2,6 +2,16 @@
     -fx-background-color: rgba(78, 23, 34, 0.5);
 }
 
+.btn:hover {
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.btn {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-border-color: rgba(0, 0 , 0, 0);
+}
+
 .image {
     -fx-background-image: url(background.png);
     -fx-background-size: cover;
@@ -22,6 +32,24 @@
 
 .RoundImage {
     -fx-background-image: url(round.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.browser {
+    -fx-background-image: url(browser.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.alarm {
+    -fx-background-image: url(alarm-clock.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.check {
+    -fx-background-image: url(list-check.png);
     -fx-background-size: cover;
     -fx-background-position: center;
 }
