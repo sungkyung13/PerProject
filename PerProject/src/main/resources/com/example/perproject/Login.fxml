@@ -12,16 +12,8 @@
    <children>
       <Pane layoutX="85.0" layoutY="303.0" prefHeight="310.0" prefWidth="310.0" stylesheets="@Design.css">
          <children>
-            <TextField layoutX="27.0" layoutY="105.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter ID" stylesheets="@Design.css">
-               <font>
-                  <Font name="Centaur" size="14.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="27.0" layoutY="158.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter Password" stylesheets="@Design.css">
-               <font>
-                  <Font name="Centaur" size="14.0" />
-               </font>
-            </TextField>
+            <TextField layoutX="27.0" layoutY="105.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter ID" stylesheets="@Design.css" />
+            <TextField layoutX="27.0" layoutY="158.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter Password" stylesheets="@Design.css" />
             <Label layoutX="102.0" layoutY="53.0" text="User Login">
                <font>
                   <Font name="HYGothic-Extra" size="18.0" />

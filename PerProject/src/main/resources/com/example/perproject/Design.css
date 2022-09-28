@@ -2,6 +2,16 @@
     -fx-background-color: rgba(78, 23, 34, 0.5);
 }
 
+.btn:hover {
+    -fx-border-color: #3B3B46;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.btn {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-border-color: rgba(0, 0 , 0, 0);
+}
+
 .image {
     -fx-background-image: url(background.png);
     -fx-background-size: cover;
