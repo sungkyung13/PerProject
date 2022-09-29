@@ -9,7 +9,27 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.TimeController">
    <children>
-      <Pane layoutY="732.0" prefHeight="70.0" prefWidth="480.0" styleClass="firstColor" stylesheets="@Design.css" />
+      <Pane layoutY="725.0" prefHeight="75.0" prefWidth="480.0" styleClass="firstColor" stylesheets="@Design.css">
+         <children>
+            <Button fx:id="changeBtn8" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#changeScene8" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="alarm" />
+               </styleClass>
+            </Button>
+            <Button fx:id="changeBtn9" layoutX="215.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeScene9" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="browser" />
+               </styleClass>
+            </Button>
+            <Button fx:id="changeBtn10" layoutX="416.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeScene10" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="check" />
+               </styleClass>
+            </Button>
+         </children></Pane>
       <Button fx:id="pauseBtn" layoutX="330.0" layoutY="644.0" mnemonicParsing="false" onAction="#pauseButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Stop" textFill="WHITE">
          <styleClass>
             <String fx:value="thirdColor" />
@@ -30,7 +50,7 @@
             <String fx:value="shadow" />
          </styleClass>
          <children>
-            <Label fx:id="timeLabel" layoutX="63.0" layoutY="172.0" text="00 : 00 : 00">
+            <Label fx:id="timeLabel" layoutX="75.0" layoutY="172.0" text="00 : 00 : 00">
                <font>
                   <Font size="48.0" />
                </font>

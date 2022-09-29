@@ -18,19 +18,19 @@
       </Pane>
       <Pane layoutX="1.0" layoutY="725.0" prefHeight="75.0" prefWidth="480.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
-            <Button layoutX="215.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn6" layoutX="215.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeScene6" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="browser" />
                </styleClass>
             </Button>
-            <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn5" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#changeScene5" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="alarm" />
                </styleClass>
             </Button>
-            <Button layoutX="416.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn7" layoutX="416.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeScene7" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="check" />

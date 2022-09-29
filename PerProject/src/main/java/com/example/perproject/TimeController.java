@@ -11,11 +11,15 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class TimeController implements Initializable{
@@ -102,6 +106,50 @@ public class TimeController implements Initializable{
 		timeLine.play(); // timeLine 이어서 재시작
 	}
 
+	@FXML
+	private Button changeBtn8;
+	public void changeScene8() {
+		try {
+			Parent nextScene
+					= FXMLLoader.load(getClass().getResource("Clock.fxml"));
+			Scene scene = new Scene(nextScene);
+			Stage primaryStage = (Stage) changeBtn8.getScene().getWindow();
+			primaryStage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private Button changeBtn9;
+	public void changeScene9() {
+		try {
+			Parent nextScene
+					= FXMLLoader.load(getClass().getResource("Main.fxml"));
+			Scene scene = new Scene(nextScene);
+			Stage primaryStage = (Stage) changeBtn9.getScene().getWindow();
+			primaryStage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private Button changeBtn10;
+	public void changeScene10() {
+		try {
+			Parent nextScene
+					= FXMLLoader.load(getClass().getResource("list.fxml"));
+			Scene scene = new Scene(nextScene);
+			Stage primaryStage = (Stage) changeBtn10.getScene().getWindow();
+			primaryStage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 
 
