@@ -23,6 +23,7 @@ public class TimeController implements Initializable{
 	@FXML private Button newBtn;
 	@FXML private Button pauseBtn;
 	@FXML private Button reStartBtn;
+	@FXML private Button clearBtn;
 	@FXML private Label timeLabel;
 	private int hours;
 	private int minutes;
@@ -30,6 +31,8 @@ public class TimeController implements Initializable{
 	private Boolean isStart = false; // 시작인지 판단할 필드.
 	private Timeline timeLine;
 	private DoubleProperty timeSeconds = new SimpleDoubleProperty();
+	private DoubleProperty timeMinutes = new SimpleDoubleProperty();
+	private DoubleProperty timeHours = new SimpleDoubleProperty();
 	private Duration time = Duration.ZERO;
 
 
@@ -42,10 +45,9 @@ public class TimeController implements Initializable{
 	}
 
 	public void newButton(ActionEvent event){
-		timeLine.stop(); // 새로 시간을 측정하려면 timeLine이 초기화되야 하므로 stop()
+		timeLine.pause(); // 새로 시간을 측정하려면 timeLine이 초기화되야 하므로 stop()
 		time = Duration.ZERO; // time의 값도 새로 측정 할 때마다 0이되어야 함.
-		timeLabel.textProperty().bind(timeSeconds.asString()); // timeCheck 에 timeSeconds 값 대입
-		isStart=true; //newButton을 클릭했으므로 isStart 값 true로
+		isStart = true; //newButton을 클릭했으므로 isStart 값 true로
 		if(isStart == true){
 
 			if (timeLine == null) {
@@ -62,6 +64,7 @@ public class TimeController implements Initializable{
 									}
 								})
 				);
+
 				timeLine.setCycleCount(Timeline.INDEFINITE);
 				timeLine.play();
 			}
@@ -75,7 +78,7 @@ public class TimeController implements Initializable{
 		seconds = 0;
 
 	}
-	public void setTimeLabel(ActionEvent event) {
+	public void setTime() {
 		if (seconds == 60) {
 			seconds = 0;
 			minutes++;
@@ -91,10 +94,19 @@ public class TimeController implements Initializable{
 		String m = minutes >= 10 ? String.valueOf(minutes) : "0" + String.valueOf(minutes);
 		String s = seconds >= 10 ? String.valueOf(seconds) : "0" + String.valueOf(seconds);
 
+		timeLabel.setText(h + " : " + m + " : " + s);
+
 
 	}
+	public void clearButton(ActionEvent event) {
+		timeLine.stop();
+		hours = 0;
+		minutes = 0;
+		seconds = 0;
+		setTime();
+	}
 	public void pauseButton(ActionEvent event){
-		timeLine.stop(); //timeLine멈춤
+		timeLine.pause(); //timeLine멈춤
 	}
 	public void reStartButton(ActionEvent event){
 		timeLine.play(); // timeLine 이어서 재시작
