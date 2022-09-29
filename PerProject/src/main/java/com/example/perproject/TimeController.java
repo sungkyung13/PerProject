@@ -50,27 +50,17 @@ public class TimeController implements Initializable{
 		isStart = true; //newButton을 클릭했으므로 isStart 값 true로
 		if(isStart == true){
 
-			if (timeLine == null) {
-				// 딱히 할 거 없음.
-			} else {
-				timeLine = new Timeline(
-						new KeyFrame(Duration.millis(1000),
-								new EventHandler<ActionEvent>() {
-									@Override
-									public void handle(ActionEvent t) {
-										Duration duration = ((KeyFrame)t.getSource()).getTime();
-										time = time.add(duration);
-										timeSeconds.set(time.toSeconds());
-									}
-								})
-				);
-
+			KeyFrame kf = new KeyFrame(Duration.millis(1000), e -> {
+				seconds++;
+				setTime();
+			});
+			    timeLine = new Timeline(kf);
 				timeLine.setCycleCount(Timeline.INDEFINITE);
 				timeLine.play();
 			}
 
 		}
-	}
+
 
 	public TimeController() {
 		hours = 0;
