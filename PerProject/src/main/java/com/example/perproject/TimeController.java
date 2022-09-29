@@ -68,6 +68,13 @@ public class TimeController implements Initializable{
 
 		}
 	}
+
+	public TimeController() {
+		hours = 0;
+		minutes = 0;
+		seconds = 0;
+
+	}
 	public void setTimeLabel(ActionEvent event) {
 		if (seconds == 60) {
 			seconds = 0;

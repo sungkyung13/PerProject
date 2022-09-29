@@ -19,7 +19,7 @@ public class StopWatch extends BorderPane {
         private int hours;
         private int minutes;
         private int seconds;
-        @FXML private Timeline timeline;
+        private Timeline timeline;
 
         public StopWatch() {
             hours = 0;
