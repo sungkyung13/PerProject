@@ -2,6 +2,11 @@
     -fx-background-color: rgba(78, 23, 34, 0.5);
 }
 
+@font-face {
+    -fx-font-family: 'DalseoDarling';
+    src : url('')
+}
+
 .LoginBtn {
     -fx-background-color: rgba(0, 0 ,0 ,0);
     -fx-border-color: rgba(255, 255 ,255 ,255);
