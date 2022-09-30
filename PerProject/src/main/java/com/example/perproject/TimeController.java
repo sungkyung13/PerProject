@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -32,26 +33,23 @@ public class TimeController implements Initializable{
 	private int hours;
 	private int minutes;
 	private int seconds;
-	private Boolean isStart = false; // 시작인지 판단할 필드.
+	private Boolean isStart = false;
 	private Timeline timeLine;
-	private DoubleProperty timeSeconds = new SimpleDoubleProperty();
-	private DoubleProperty timeMinutes = new SimpleDoubleProperty();
-	private DoubleProperty timeHours = new SimpleDoubleProperty();
 	private Duration time = Duration.ZERO;
 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		timeLine = new Timeline(); // timeLine 객체 초기화
+		timeLine = new Timeline();
 		timeLine.setCycleCount(Timeline.INDEFINITE);
 		timeLine.play();
 
 	}
 
 	public void newButton(ActionEvent event){
-		timeLine.pause(); // 새로 시간을 측정하려면 timeLine이 초기화되야 하므로 stop()
-		time = Duration.ZERO; // time의 값도 새로 측정 할 때마다 0이되어야 함.
-		isStart = true; //newButton을 클릭했으므로 isStart 값 true로
+		timeLine.pause();
+		time = Duration.ZERO;
+		isStart = true;
 		if(isStart == true){
 
 			KeyFrame kf = new KeyFrame(Duration.millis(1000), e -> {
@@ -71,6 +69,9 @@ public class TimeController implements Initializable{
 		minutes = 0;
 		seconds = 0;
 
+		timeLabel = new Label();
+		timeLabel.setFont(Font.font("System", 48));
+		setTime();
 	}
 	public void setTime() {
 		if (seconds == 60) {
@@ -91,6 +92,8 @@ public class TimeController implements Initializable{
 		timeLabel.setText(h + " : " + m + " : " + s);
 
 
+
+
 	}
 	public void clearButton(ActionEvent event) {
 		timeLine.stop();
@@ -100,11 +103,13 @@ public class TimeController implements Initializable{
 		setTime();
 	}
 	public void pauseButton(ActionEvent event){
-		timeLine.pause(); //timeLine멈춤
+		timeLine.pause();
 	}
 	public void reStartButton(ActionEvent event){
-		timeLine.play(); // timeLine 이어서 재시작
+		timeLine.play();
 	}
+
+	// 버튼 구현
 
 	@FXML
 	private Button changeBtn8;
