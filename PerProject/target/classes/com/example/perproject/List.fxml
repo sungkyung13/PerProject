@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
-
+<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
+   <children>
+      <Button fx:id="PopBtn" layoutX="62.0" layoutY="165.0" mnemonicParsing="false" onAction="#popup" text="Add" />
+   </children>
 </AnchorPane>
