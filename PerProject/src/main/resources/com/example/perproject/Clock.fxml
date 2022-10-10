@@ -50,9 +50,9 @@
             <String fx:value="shadow" />
          </styleClass>
          <children>
-            <Label fx:id="timeLabel" layoutX="75.0" layoutY="172.0" text="00 : 00 : 00">
+            <Label fx:id="timeLabel" layoutX="71.0" layoutY="176.0" text="00 : 00 : 00">
                <font>
-                  <Font name="System" size="48.0" />
+                  <Font name="HYGothic-Medium" size="48.0" />
                </font>
             </Label>
             <Button fx:id="clearBtn" layoutX="294.0" layoutY="325.0" mnemonicParsing="false" onAction="#clearButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="clear" textFill="WHITE">

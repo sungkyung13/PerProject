@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.Main">
    <children>
-      <Pane layoutX="23.0" layoutY="193.0" prefHeight="493.0" prefWidth="435.0" stylesheets="@Design.css">
+      <Pane layoutX="23.0" layoutY="200.0" prefHeight="500.0" prefWidth="435.0" stylesheets="@Design.css">
          <styleClass>
             <String fx:value="round" />
             <String fx:value="secondColor" />
