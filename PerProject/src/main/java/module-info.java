@@ -6,4 +6,5 @@ module com.example.perproject {
 
     opens com.example.perproject to javafx.fxml;
     exports com.example.perproject;
+    requires java.sql;
 }
