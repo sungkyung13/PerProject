@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
+<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.ToDo.List">
    <children>
       <Button fx:id="PopBtn" layoutX="395.0" layoutY="133.0" mnemonicParsing="false" onAction="#popup" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css" text="+" textFill="WHITE">
          <styleClass>
