@@ -48,12 +48,13 @@ public class TodoData {
             while ((input = br.readLine()) != null) {
                 String[] itemPieces = input.split("\t");
 
-                String shortDescription = itemPieces[0];
-                String details = itemPieces[1];
-                String dateString = itemPieces[2];
+                String TaskName = itemPieces[0];
+                String Details = itemPieces[1];
+                String Time = itemPieces[2];
+                String dateString = itemPieces[3];
 
                 LocalDate date = LocalDate.parse(dateString, formatter);
-                TodoItem todoItem = new TodoItem(shortDescription, details, date);
+                TodoItem todoItem = new TodoItem(TaskName, Details, Time, date);
                 todoItems.add(todoItem);
             }
 
@@ -73,8 +74,9 @@ public class TodoData {
             while(iter.hasNext()) {
                 TodoItem item = iter.next();
                 bw.write(String.format("%s\t%s\t%s",
-                        item.getShortDescription(),
+                        item.getTaskName(),
                         item.getDetails(),
+                        item.getTime(),
                         item.getDeadline().format(formatter)));
                 bw.newLine();
             }

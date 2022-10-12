@@ -52,22 +52,6 @@ public class SignUp {
 
     //  화면 전환 버튼 구현
 
-
-    @FXML
-    private Button changeBtn3;
-    public void changeScene3() {
-        try {
-            Parent nextScene
-                    = FXMLLoader.load(getClass().getResource("SignUpFini.fxml"));
-            Scene scene = new Scene(nextScene);
-            Stage primaryStage = (Stage) changeBtn3.getScene().getWindow();
-            primaryStage.setScene(scene);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     private Label changeBtn4;
     public void changeScene4() {

@@ -29,8 +29,6 @@ public class List implements Initializable {
     @FXML
     private Label label;
 
-    @FXML
-    private Button CancelBtn;
     private Stage pop;
     public void popup() {
         Stage mainStage = (Stage) PopBtn.getScene().getWindow();
@@ -51,12 +49,6 @@ public class List implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-
-    public void close() {
-        pop = (Stage) CancelBtn.getScene().getWindow();
-        pop.close();
     }
 
  // 아래 부분 바 버튼
