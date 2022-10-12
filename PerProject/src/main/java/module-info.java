@@ -6,7 +6,5 @@ module com.example.perproject {
 
     opens com.example.perproject to javafx.fxml;
     exports com.example.perproject;
-    exports com.example.perproject.ToDo;
-    opens com.example.perproject.ToDo to javafx.fxml;
     requires java.sql;
 }

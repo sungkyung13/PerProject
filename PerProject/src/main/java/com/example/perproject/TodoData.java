@@ -1,4 +1,4 @@
-package com.example.perproject.ToDo;
+package com.example.perproject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

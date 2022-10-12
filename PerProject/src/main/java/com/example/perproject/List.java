@@ -1,4 +1,4 @@
-package com.example.perproject.ToDo;
+package com.example.perproject;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,8 +25,10 @@ public class List implements Initializable {
 
     @FXML
     private Button PopBtn;
+
     @FXML
     private Label label;
+
     @FXML
     private Button CancelBtn;
     private Stage pop;

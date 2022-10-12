@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.ToDoList">
+<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
    <children>
-      <Button fx:id="PopupBtn" layoutX="395.0" layoutY="133.0" mnemonicParsing="false" onAction="#PopUp" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css" text="+" textFill="WHITE">
+      <Button fx:id="PopBtn" layoutX="395.0" layoutY="133.0" mnemonicParsing="false" onAction="#popup" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css" text="+" textFill="WHITE">
          <styleClass>
             <String fx:value="BtShadow" />
             <String fx:value="round2" />
@@ -21,19 +21,19 @@
          </font></Button>
       <Pane layoutY="725.0" prefHeight="75.0" prefWidth="480.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
-            <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBt11" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#changeScene11" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="alarm" />
                </styleClass>
             </Button>
-            <Button layoutX="215.0" layoutY="13.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn12" layoutX="215.0" layoutY="13.0" mnemonicParsing="false" onAction="#changeScene12" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="browser" />
                </styleClass>
             </Button>
-            <Button layoutX="416.0" layoutY="13.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn13" layoutX="416.0" layoutY="13.0" mnemonicParsing="false" onAction="#changeScene13" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="check" />
