@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -47,7 +48,7 @@ public class List implements Initializable {
     private Label DeadLine;
 
     @FXML
-    private BorderPane MainBorderPane;
+    private AnchorPane MainAnchorPane;
 
     @FXML
     private ContextMenu listContextMenu;
