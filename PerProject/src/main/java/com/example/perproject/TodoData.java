@@ -39,7 +39,7 @@ public class TodoData {
     public void loadTodoItems() throws IOException {
 
         todoItems = FXCollections.observableArrayList();
-        Path path = Paths.get(filename);
+        java.nio.file.Path path = Paths.get(filename);
         BufferedReader br = Files.newBufferedReader(path);
 
         String input;
