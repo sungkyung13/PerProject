@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.AddList">
+<AnchorPane prefHeight="500.0" prefWidth="480.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.AddList">
    <children>
-      <Button layoutX="165.0" layoutY="418.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@Design.css" text="Add" textFill="WHITE">
+      <Button layoutX="165.0" layoutY="418.0" mnemonicParsing="false" onAction="#processResults" prefHeight="30.0" prefWidth="150.0" stylesheets="@Design.css" text="Add" textFill="WHITE">
          <styleClass>
             <String fx:value="BtShadow" />
             <String fx:value="round" />
@@ -24,14 +24,14 @@
          </font>
       </Label>
       <Pane layoutY="475.0" prefHeight="25.0" prefWidth="480.0" styleClass="thirdColor" stylesheets="@Design.css" />
-      <TextField layoutX="116.0" layoutY="106.0" prefHeight="22.0" prefWidth="250.0" promptText="What do you need to do?">
+      <TextField fx:id="TaskField" layoutX="116.0" layoutY="106.0" prefHeight="22.0" prefWidth="250.0" promptText="What do you need to do?">
          <font>
             <Font name="Corbel" size="12.0" />
          </font>
       </TextField>
-      <TextArea layoutX="116.0" layoutY="157.0" prefHeight="121.0" prefWidth="250.0" />
-      <DatePicker layoutX="116.0" layoutY="361.0" prefHeight="22.0" prefWidth="250.0" />
-      <TextField layoutX="116.0" layoutY="310.0" prefHeight="22.0" prefWidth="250.0" />
+      <TextArea fx:id="DetailsArea" layoutX="116.0" layoutY="157.0" prefHeight="121.0" prefWidth="250.0" />
+      <DatePicker fx:id="DeadLine" layoutX="116.0" layoutY="361.0" prefHeight="22.0" prefWidth="250.0" />
+      <TextField fx:id="TimeField" layoutX="116.0" layoutY="310.0" prefHeight="22.0" prefWidth="250.0" />
       <Label layoutX="120.0" layoutY="135.0" text="Notes">
          <font>
             <Font size="13.0" />
