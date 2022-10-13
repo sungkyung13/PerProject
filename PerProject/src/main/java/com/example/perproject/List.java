@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -23,6 +25,21 @@ public class List implements Initializable {
 
     }
 
+    @FXML
+    private ListView<TodoItem> todoItemListView;
+
+    @FXML
+    private TextArea ItemDetails;
+
+    @FXML
+    private Label DeadLine;
+
+    @FXML
+    private BorderPane mainBorderPane;
+
+
+
+    // 팝업 창 뜨는 버튼
     @FXML
     private Button PopBtn;
 
