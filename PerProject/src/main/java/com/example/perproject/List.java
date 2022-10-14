@@ -48,6 +48,10 @@ public class List implements Initializable {
     private Label DeadLine;
 
     @FXML
+    private Label Time;
+
+
+    @FXML
     private AnchorPane MainAnchorPane;
 
     @FXML
@@ -149,6 +153,36 @@ public class List implements Initializable {
             }
         });
     }
+
+    @FXML
+    public void showNewItemDialog() {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(MainAnchorPane.getScene().getWindow());
+        dialog.setTitle("Add New Todo Item");
+        dialog.setHeaderText("Use this dialog to create a new todo item");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("AddList.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+
+        } catch (IOException e) {
+            System.out.println("Couldn't load the dialog");
+            e.printStackTrace();
+            return;
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            AddList listAdd = fxmlLoader.getController();
+            TodoItem newItem = listAdd.processResults();
+            todoListView.getSelectionModel().select(newItem);
+        }
+    }
+
+
     @FXML
     public void handleKeyPressed(KeyEvent keyEvent) {
         TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
@@ -166,6 +200,7 @@ public class List implements Initializable {
         DeadLine.setText(item.getDeadline().toString());
     }
 
+    // delete 알람 화면
     public void deleteItem(TodoItem item) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Todo Item");
