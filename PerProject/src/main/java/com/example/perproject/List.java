@@ -64,7 +64,7 @@ public class List implements Initializable {
 
     private Predicate<TodoItem> wantAllItems;
 
-    private Predicate<TodoItem> wantTodaysItem;
+    private Predicate<TodoItem> wantTodayItem;
 
     public void initialize() {
         listContextMenu = new ContextMenu();
@@ -84,8 +84,9 @@ public class List implements Initializable {
                 if (newValue != null) {
                     TodoItem item = todoListView.getSelectionModel().getSelectedItem();
                     ItemDetails.setText(item.getDetails());
-                    DateTimeFormatter df = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy, MMMM d");
                     DeadLine.setText(df.format(item.getDeadline()));
+                    DateTimeFormatter tf = DateTimeFormatter.ofPattern("");
                 }
             }
         });
@@ -98,7 +99,7 @@ public class List implements Initializable {
             }
         };
 
-        wantTodaysItem = new Predicate<TodoItem>() {
+        wantTodayItem = new Predicate<TodoItem>() {
              @Override
              public boolean test(TodoItem todoItem) {
                  return (todoItem.getDeadline().equals(LocalDate.now()));
@@ -218,7 +219,7 @@ public class List implements Initializable {
     public void handleFilterButton() {
         TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
         if(filterToggleButton.isSelected()) {
-            filteredList.setPredicate(wantTodaysItem);
+            filteredList.setPredicate(wantTodayItem);
             if(filteredList.isEmpty()) {
                 ItemDetails.clear();
                 DeadLine.setText("");

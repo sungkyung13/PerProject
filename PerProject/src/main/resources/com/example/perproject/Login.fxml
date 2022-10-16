@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="480.0" styleClass="fourthColor" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.Login">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="fourthColor" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.Login">
    <children>
-      <Pane layoutX="85.0" layoutY="303.0" prefHeight="310.0" prefWidth="310.0" stylesheets="@Design.css">
+      <Pane layoutX="506.0" layoutY="145.0" prefHeight="310.0" prefWidth="310.0" stylesheets="@Design.css">
          <children>
             <TextField layoutX="27.0" layoutY="105.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter ID" stylesheets="@Design.css" />
             <Label layoutX="102.0" layoutY="53.0" text="User Login">
@@ -36,8 +36,8 @@
             <String fx:value="round" />
          </styleClass>
       </Pane>
-      <Pane layoutX="180.0" layoutY="162.0" prefHeight="110.0" prefWidth="120.0" styleClass="LoGoImage" stylesheets="@Design.css" />
-      <Label layoutX="119.0" layoutY="739.0" text="Don't hava an account?" textFill="#646464" />
-      <Label fx:id="changeBtn2" layoutX="260.0" layoutY="739.0" onMouseClicked="#changeScene2" text="Create Account" textFill="#4747f5" />
+      <Pane layoutX="189.0" layoutY="213.0" prefHeight="110.0" prefWidth="120.0" styleClass="LoGoImage" stylesheets="@Design.css" />
+      <Label layoutX="142.0" layoutY="370.0" text="Don't hava an account?" textFill="#646464" />
+      <Label fx:id="changeBtn2" layoutX="286.0" layoutY="370.0" onMouseClicked="#changeScene2" text="Create Account" textFill="#4747f5" />
    </children>
 </AnchorPane>

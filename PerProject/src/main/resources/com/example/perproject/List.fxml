@@ -51,7 +51,7 @@
       </Label>
       <ListView fx:id="todoListView" layoutX="23.0" layoutY="200.0" onKeyPressed="#handleKeyPressed" prefHeight="170.0" prefWidth="435.0" stylesheets="@Design.css">
          <styleClass>
-            <String fx:value="shadow" />
+            <String fx:value="shadow2" />
             <String fx:value="round" />
          </styleClass>
       </ListView>
@@ -59,7 +59,6 @@
          <styleClass>
             <String fx:value="shadow2" />
             <String fx:value="round" />
-            <String fx:value="secondColor" />
          </styleClass>
       </TextArea>
       <HBox layoutX="23.0" layoutY="655.0" prefHeight="18.0" prefWidth="220.0">
@@ -90,7 +89,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label>
+            <Label fx:id="Time">
                <font>
                   <Font size="14.0" />
                </font>
