@@ -3,6 +3,8 @@ package com.example.perproject;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -16,14 +18,10 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -32,10 +30,69 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
-public class List implements Initializable {
+public class List implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Items = FXCollections.observableArrayList();
+        todoListView.setItems(Items);
+    }
 
+
+//
+    @FXML
+    private TextField TaskField;
+
+    @FXML
+    private TextArea DetailsArea;
+
+    @FXML
+    private TextField TimeField;
+
+    @FXML
+    private DatePicker DateDeadLine;
+
+    private ObservableList<TodoItem> Items;
+
+    // add 버튼
+    public void AddTodo() {
+        String TaskName = TaskField.getText();
+
+        if (TaskName.isEmpty()) {
+            alert("할 일의 이름을 입력하셔야 합니다.", null);
+            return;
+        }
+
+        String Details = DetailsArea.getText();
+        if (Details.isEmpty()) {
+            alert("내용을 입력하셔야 합니다.", null);
+            return;
+
+        }
+
+        String Time = TimeField.getText();
+        if (Time.isEmpty()) {
+            alert("시간을 입력하셔야 합니다.", null);
+            return;
+        }
+
+
+        LocalDate deadlineValue = DateDeadLine.getValue();
+        if (deadlineValue == null) {
+            alert("날짜를 입력하세요", null);
+            return;
+        }
+
+        TodoItem newItem = new TodoItem(TaskName, Details, Time, deadlineValue);
+        Items.add(newItem);
+
+    }
+
+    public void alert(String msg, String header) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("!");
+        alert.setHeaderText(header);
+        alert.setContentText(msg);
+        alert.show();
     }
 
     @FXML
@@ -90,7 +147,6 @@ public class List implements Initializable {
                 }
             }
         });
-
 
         wantAllItems = new Predicate<TodoItem>() {
             @Override
@@ -155,34 +211,6 @@ public class List implements Initializable {
         });
     }
 
-    @FXML
-    public void showNewItemDialog() {
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.initOwner(MainAnchorPane.getScene().getWindow());
-        dialog.setTitle("Add New Todo Item");
-        dialog.setHeaderText("Use this dialog to create a new todo item");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("AddList.fxml"));
-        try {
-            dialog.getDialogPane().setContent(fxmlLoader.load());
-
-        } catch (IOException e) {
-            System.out.println("Couldn't load the dialog");
-            e.printStackTrace();
-            return;
-        }
-
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            AddList listAdd = fxmlLoader.getController();
-            TodoItem newItem = listAdd.processResults();
-            todoListView.getSelectionModel().select(newItem);
-        }
-    }
-
 
     @FXML
     public void handleKeyPressed(KeyEvent keyEvent) {
@@ -238,36 +266,6 @@ public class List implements Initializable {
     public void handleExit() {
         Platform.exit();
 
-    }
-
-
-    // 팝업 창 뜨는 버튼
-    @FXML
-    private Button PopBtn;
-
-    @FXML
-    private Label label;
-
-    private Stage pop;
-    public void popup() {
-        Stage mainStage = (Stage) PopBtn.getScene().getWindow();
-
-        pop = new Stage(StageStyle.DECORATED);
-        pop.initModality(Modality.WINDOW_MODAL);
-        pop.initOwner(mainStage);
-
-        try {
-            Parent nextScene
-                    =FXMLLoader.load(getClass().getResource("AddList.fxml"));
-            Scene scene = new Scene(nextScene);
-            pop.setScene(scene);
-            pop.setTitle("List Add");
-            pop.setResizable(false);
-            pop.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
  // 아래 부분 바 버튼
