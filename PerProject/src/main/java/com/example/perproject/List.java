@@ -290,7 +290,7 @@ public class List implements Initializable{
     public void changeScene12() {
         try {
             Parent nextScene
-                    = FXMLLoader.load(getClass().getResource("Main.fxml"));
+                    = FXMLLoader.load(getClass().getResource("Post.fxml"));
             Scene scene = new Scene(nextScene);
             Stage primaryStage = (Stage) changeBtn12.getScene().getWindow();
             primaryStage.setScene(scene);

@@ -109,7 +109,7 @@ public class TimeController implements Initializable{
 		timeLine.play();
 	}
 
-	// ¹öÆ° ±¸Çö
+	// ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½
 
 	@FXML
 	private Button changeBtn8;
@@ -131,7 +131,7 @@ public class TimeController implements Initializable{
 	public void changeScene9() {
 		try {
 			Parent nextScene
-					= FXMLLoader.load(getClass().getResource("Main.fxml"));
+					= FXMLLoader.load(getClass().getResource("Post.fxml"));
 			Scene scene = new Scene(nextScene);
 			Stage primaryStage = (Stage) changeBtn9.getScene().getWindow();
 			primaryStage.setScene(scene);

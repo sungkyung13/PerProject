@@ -30,21 +30,21 @@
                </styleClass>
             </Button>
          </children></Pane>
-      <Button fx:id="pauseBtn" layoutX="145.0" layoutY="220.0" mnemonicParsing="false" onAction="#pauseButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Stop" textFill="WHITE">
+      <Button fx:id="pauseBtn" layoutX="687.0" layoutY="220.0" mnemonicParsing="false" onAction="#pauseButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Stop" textFill="WHITE">
          <styleClass>
             <String fx:value="thirdColor" />
             <String fx:value="round2" />
             <String fx:value="BtShadow" />
          </styleClass>
       </Button>
-      <Button fx:id="newBtn" layoutX="145.0" layoutY="119.0" mnemonicParsing="false" onAction="#newButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Start" textFill="WHITE">
+      <Button fx:id="newBtn" layoutX="687.0" layoutY="119.0" mnemonicParsing="false" onAction="#newButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Start" textFill="WHITE">
          <styleClass>
             <String fx:value="thirdColor" />
             <String fx:value="BtShadow" />
             <String fx:value="round2" />
          </styleClass>
       </Button>
-      <Pane layoutX="409.0" layoutY="100.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@Design.css">
+      <Pane layoutX="193.0" layoutY="100.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@Design.css">
          <styleClass>
             <String fx:value="RoundImage" />
             <String fx:value="shadow" />
@@ -57,14 +57,14 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="clearBtn" layoutX="145.0" layoutY="436.0" mnemonicParsing="false" onAction="#clearButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="clear" textFill="WHITE">
+      <Button fx:id="clearBtn" layoutX="687.0" layoutY="436.0" mnemonicParsing="false" onAction="#clearButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="clear" textFill="WHITE">
          <styleClass>
             <String fx:value="thirdColor" />
             <String fx:value="BtShadow" />
             <String fx:value="round2" />
          </styleClass>
       </Button>
-      <Button fx:id="reStartBtn" layoutX="145.0" layoutY="324.0" mnemonicParsing="false" onAction="#reStartButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Restart" textFill="WHITE">
+      <Button fx:id="reStartBtn" layoutX="687.0" layoutY="324.0" mnemonicParsing="false" onAction="#reStartButton" prefHeight="45.0" prefWidth="110.0" stylesheets="@Design.css" text="Restart" textFill="WHITE">
          <styleClass>
             <String fx:value="thirdColor" />
             <String fx:value="round2" />

@@ -43,7 +43,7 @@ public class Main implements Initializable {
     public void changeScene6() {
         try {
             Parent nextScene
-                    = FXMLLoader.load(getClass().getResource("Main.fxml"));
+                    = FXMLLoader.load(getClass().getResource("Post.fxml"));
             Scene scene = new Scene(nextScene);
             Stage primaryStage = (Stage) changeBtn6.getScene().getWindow();
             primaryStage.setScene(scene);

@@ -25,7 +25,7 @@ public class TodoData {
     }
 
     private TodoData() {
-        formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     }
 
     public ObservableList<TodoItem> getTodoItems() {
@@ -39,14 +39,14 @@ public class TodoData {
     public void loadTodoItems() throws IOException {
 
         todoItems = FXCollections.observableArrayList();
-        java.nio.file.Path path = Paths.get(filename);
+        Path path = Paths.get(filename);
         BufferedReader br = Files.newBufferedReader(path);
 
         String input;
 
         try {
             while ((input = br.readLine()) != null) {
-                String[] itemPieces = input.split("\n");
+                String[] itemPieces = input.split("\t");
 
                 String TaskName = itemPieces[0];
                 String dateString = itemPieces[1];
@@ -73,7 +73,7 @@ public class TodoData {
             Iterator<TodoItem> iter = todoItems.iterator();
             while(iter.hasNext()) {
                 TodoItem item = iter.next();
-                bw.write(String.format("%s\n%s\n%s\n%s",
+                bw.write(String.format("%s\t%s\t%s\t%s",
                         item.getTaskName(),
                         item.getDetails(),
                         item.getTime(),
