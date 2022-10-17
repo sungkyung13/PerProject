@@ -109,6 +109,9 @@ public class List implements Initializable{
         alert.show();
     }
 
+
+
+
     @FXML
     private ListView<TodoItem> todoListView;
 
@@ -157,7 +160,7 @@ public class List implements Initializable{
                     ItemDetails.setText(item.getDetails());
                     DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy, MMMM d");
                     DeadLine.setText(df.format(item.getDeadline()));
-                    DateTimeFormatter tf = DateTimeFormatter.ofPattern("");
+                    Time.setText(item.getTime());
                 }
             }
         });
@@ -186,7 +189,7 @@ public class List implements Initializable{
                      }
                 });
 
-//        todoListView.setItems(TodoData.getInstance().getTodoItems());
+        todoListView.setItems(TodoData.getInstance().getTodoItems());
         todoListView.setItems(sortedList);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
@@ -203,7 +206,7 @@ public class List implements Initializable{
                         } else {
                             setText(item.getTaskName());
                             if (item.getDeadline().isBefore(LocalDate.now().plusDays(1))) {
-                                setTextFill(Color.RED);
+                                setTextFill(Color.BLACK);
                             } else if (item.getDeadline().equals(LocalDate.now().plusDays(1))) {
                                 setTextFill(Color.BROWN);
                             }
@@ -241,6 +244,7 @@ public class List implements Initializable{
         TodoItem item = todoListView.getSelectionModel().getSelectedItem();
         ItemDetails.setText(item.getDetails());
         DeadLine.setText(item.getDeadline().toString());
+        Time.setText(item.getTime().toString());
     }
 
     // delete 알람 화면
@@ -265,6 +269,7 @@ public class List implements Initializable{
             if(filteredList.isEmpty()) {
                 ItemDetails.clear();
                 DeadLine.setText("");
+                Time.setText("");
             } else if(filteredList.contains(selectedItem)) {
                 todoListView.getSelectionModel().select(selectedItem);
             } else {

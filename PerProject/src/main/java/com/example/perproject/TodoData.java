@@ -15,7 +15,7 @@ import java.util.Iterator;
 
 public class TodoData {
     private static TodoData instance = new TodoData();
-    private static String filename = "src/main/TodoListItems.txt";
+    private static String filename = "TodoListItems.txt";
 
     private ObservableList<TodoItem> todoItems;
     private DateTimeFormatter formatter;
@@ -25,7 +25,7 @@ public class TodoData {
     }
 
     private TodoData() {
-        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     }
 
     public ObservableList<TodoItem> getTodoItems() {
@@ -50,8 +50,10 @@ public class TodoData {
 
                 String TaskName = itemPieces[0];
                 String dateString = itemPieces[1];
-                String Time = itemPieces[2];
-                String Details = itemPieces[3];
+                String Details = itemPieces[2];
+                String Time = itemPieces[3];
+
+
 
                 LocalDate date = LocalDate.parse(dateString, formatter);
                 TodoItem todoItem = new TodoItem(TaskName, Details, Time, date);
