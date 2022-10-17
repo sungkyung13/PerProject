@@ -290,13 +290,13 @@ public class List implements Initializable{
  // 아래 부분 바 버튼
 
     @FXML
-    private Button changeBt11;
+    private Button ClockBtn;
     public void changeScene11() {
         try {
             Parent nextScene
                     = FXMLLoader.load(getClass().getResource("Clock.fxml"));
             Scene scene = new Scene(nextScene);
-            Stage primaryStage = (Stage) changeBt11.getScene().getWindow();
+            Stage primaryStage = (Stage) ClockBtn.getScene().getWindow();
             primaryStage.setScene(scene);
 
         } catch (Exception e) {
@@ -305,28 +305,13 @@ public class List implements Initializable{
     }
 
     @FXML
-    private Button changeBtn12;
-    public void changeScene12() {
-        try {
-            Parent nextScene
-                    = FXMLLoader.load(getClass().getResource("Post.fxml"));
-            Scene scene = new Scene(nextScene);
-            Stage primaryStage = (Stage) changeBtn12.getScene().getWindow();
-            primaryStage.setScene(scene);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private Button changeBtn13;
+    private Button ListBtn;
     public void changeScene13() {
         try {
             Parent nextScene
                     = FXMLLoader.load(getClass().getResource("list.fxml"));
             Scene scene = new Scene(nextScene);
-            Stage primaryStage = (Stage) changeBtn13.getScene().getWindow();
+            Stage primaryStage = (Stage) ListBtn.getScene().getWindow();
             primaryStage.setScene(scene);
 
         } catch (Exception e) {

@@ -14,15 +14,15 @@ public class DBUtil {
         String userName = "root";
         String password = "";
 
-        Connection conn = null;
+        Connection con = null;
 
         try {
-            conn = DriverManager.getConnection(url, userName, password);
+            con = DriverManager.getConnection(url, userName, password);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return conn;
+        return con;
     }
 
 }

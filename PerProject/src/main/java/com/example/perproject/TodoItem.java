@@ -48,4 +48,11 @@ public class TodoItem {
     public void setDeadline(LocalDate deadline) {
         this.DeadLine = deadline;
     }
+
+    @Override
+    public String toString() {
+        return TaskName;
+    }
 }
+
+

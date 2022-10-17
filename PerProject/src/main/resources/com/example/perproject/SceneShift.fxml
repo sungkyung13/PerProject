@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="fourthColor" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.SceneShift">
+   <children>
+      <Label layoutX="307.0" layoutY="242.0" text="Waiting ...." textFill="WHITE">
+         <font>
+            <Font name="HYGothic-Extra" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="339.0" layoutY="310.0" text="Press to go to the next screen" textFill="#434343">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="NextScene" layoutX="530.0" layoutY="310.0" onMouseClicked="#changeScene14" text="Click" textFill="#4747f5">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

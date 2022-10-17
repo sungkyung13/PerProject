@@ -112,13 +112,13 @@ public class TimeController implements Initializable{
 	// ��ư ����
 
 	@FXML
-	private Button changeBtn8;
+	private Button ClockBtn1;
 	public void changeScene8() {
 		try {
 			Parent nextScene
 					= FXMLLoader.load(getClass().getResource("Clock.fxml"));
 			Scene scene = new Scene(nextScene);
-			Stage primaryStage = (Stage) changeBtn8.getScene().getWindow();
+			Stage primaryStage = (Stage) ClockBtn1.getScene().getWindow();
 			primaryStage.setScene(scene);
 
 		} catch (Exception e) {
@@ -127,28 +127,13 @@ public class TimeController implements Initializable{
 	}
 
 	@FXML
-	private Button changeBtn9;
-	public void changeScene9() {
-		try {
-			Parent nextScene
-					= FXMLLoader.load(getClass().getResource("Post.fxml"));
-			Scene scene = new Scene(nextScene);
-			Stage primaryStage = (Stage) changeBtn9.getScene().getWindow();
-			primaryStage.setScene(scene);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@FXML
-	private Button changeBtn10;
+	private Button ListBtn1;
 	public void changeScene10() {
 		try {
 			Parent nextScene
 					= FXMLLoader.load(getClass().getResource("list.fxml"));
 			Scene scene = new Scene(nextScene);
-			Stage primaryStage = (Stage) changeBtn10.getScene().getWindow();
+			Stage primaryStage = (Stage) ListBtn1.getScene().getWindow();
 			primaryStage.setScene(scene);
 
 		} catch (Exception e) {
