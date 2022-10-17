@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="fourthColor" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.Start">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="fourthColor" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.Start">
    <children>
-      <Pane layoutX="388.0" layoutY="173.0" prefHeight="140.0" prefWidth="150.0" styleClass="LoGoImage" stylesheets="@Design.css" />
-      <Button fx:id="changeBtn1" layoutX="401.0" layoutY="403.0" mnemonicParsing="false" onAction="#changeScene1" prefHeight="40.0" prefWidth="125.0" styleClass="LoginBtn" stylesheets="@Design.css" text="Start" textFill="WHITE">
+      <Pane layoutX="375.0" layoutY="174.0" prefHeight="140.0" prefWidth="150.0" styleClass="LoGoImage" stylesheets="@Design.css" />
+      <Button fx:id="changeBtn1" layoutX="388.0" layoutY="404.0" mnemonicParsing="false" onAction="#changeScene1" prefHeight="40.0" prefWidth="125.0" styleClass="LoginBtn" stylesheets="@Design.css" text="Start" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

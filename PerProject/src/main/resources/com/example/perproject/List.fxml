@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -74,6 +75,9 @@
             <String fx:value="BtShadow" />
             <String fx:value="round" />
          </styleClass>
+         <tooltip>
+            <Tooltip text="Button Down: Show Today's items only. Button Up: Show all items" />
+         </tooltip>
       </ToggleButton>
       <TextField fx:id="TaskField" layoutX="382.0" layoutY="415.0" prefHeight="22.0" prefWidth="220.0" promptText="What do you need to do?">
          <font>

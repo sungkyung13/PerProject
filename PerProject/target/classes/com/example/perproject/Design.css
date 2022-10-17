@@ -44,6 +44,12 @@
     -fx-background-position: center;
 }
 
+.Back {
+    -fx-background-image: url(back-icon.png);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
 .browser {
     -fx-background-image: url(browser.png);
     -fx-background-size: cover;

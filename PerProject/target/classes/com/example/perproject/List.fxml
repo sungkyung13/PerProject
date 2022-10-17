@@ -8,12 +8,13 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
+<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
    <children>
       <Pane prefHeight="600.0" prefWidth="75.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
@@ -68,12 +69,15 @@
             </Label>
          </children>
       </HBox>
-      <ToggleButton fx:id="filterToggleButton" layoutX="106.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFilterButton" prefHeight="22.0" prefWidth="85.0" stylesheets="@Design.css" text="Today's Task" textFill="WHITE">
+      <ToggleButton fx:id="filterToggleButton" layoutX="106.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFilterButton" prefHeight="23.0" prefWidth="94.0" stylesheets="@Design.css" text="Today's Task" textFill="WHITE">
          <styleClass>
             <String fx:value="firstColor" />
             <String fx:value="BtShadow" />
             <String fx:value="round" />
          </styleClass>
+         <tooltip>
+            <Tooltip text="Button Down: Show Today's items only. Button Up: Show all items" />
+         </tooltip>
       </ToggleButton>
       <TextField fx:id="TaskField" layoutX="382.0" layoutY="415.0" prefHeight="22.0" prefWidth="220.0" promptText="What do you need to do?">
          <font>

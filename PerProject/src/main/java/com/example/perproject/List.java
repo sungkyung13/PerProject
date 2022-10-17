@@ -26,6 +26,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
@@ -53,10 +54,22 @@ public class List implements Initializable{
 
     private ObservableList<TodoItem> Items;
 
+    // add
+    public TodoItem ProcessResults() {
+        String TaskName = TaskField.getText().trim();
+        String Details = DetailsArea.getText().trim();
+        String Time = TimeField.getText().trim();
+        LocalDate DeadLineValue = DateDeadLine.getValue();
+
+        TodoItem newItem = new TodoItem(TaskName, Details, Time, DeadLineValue);
+        TodoData.getInstance().addTodoItem(newItem);
+        return newItem;
+    }
+
     // add 버튼
     public void AddTodo() {
-        String TaskName = TaskField.getText();
 
+        String TaskName = TaskField.getText();
         if (TaskName.isEmpty()) {
             alert("할 일의 이름을 입력하셔야 합니다.", null);
             return;
@@ -84,6 +97,7 @@ public class List implements Initializable{
 
         TodoItem newItem = new TodoItem(TaskName, Details, Time, deadlineValue);
         Items.add(newItem);
+        todoListView.getSelectionModel().select(newItem);
 
     }
 
