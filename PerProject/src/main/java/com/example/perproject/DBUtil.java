@@ -9,6 +9,16 @@ import java.sql.SQLException;
 public class DBUtil {
     public Connection connection;
 
+    public static DBUtil instance;
+
+    public static DBUtil getInstance() {
+        if (instance == null) {
+            instance = new DBUtil();
+
+        }
+        return instance;
+    }
+
     public Connection getConnection() {
         String url = "jdbc:mysql://127.0.0.1:3306/yydh";
         String userName = "root";
