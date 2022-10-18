@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -21,8 +22,6 @@ public class SignUp {
     @FXML
     private TextField pw;
     @FXML
-    private TextField phone;
-    @FXML
     private TextField name;
     @FXML
     private Button joinBtn;
@@ -32,22 +31,30 @@ public class SignUp {
         Connection conn = db.getConnection();
 
         PreparedStatement pstmt = null;
-        String sql = "INSERT INTO users(id, pw, name, phone) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO users(id, pw, name) VALUES(?,?,?)";
 
         try {
             pstmt = ((Connection) conn).prepareStatement(sql);
             pstmt.setString(1, id.getText());
             pstmt.setString(2, pw.getText());
             pstmt.setString(3, name.getText());
-            pstmt.setString(4, phone.getText());
             pstmt.executeUpdate();
-            System.out.println("삽입 성공!!");
+            alert("회원가입이 정상적으로 완료되었습니다.", null);
+
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("삽입 실패!!");
+            alert("회원가입이 제대로 완료되지 않았습니다.", null);
 
         }
+    }
+
+    public void alert(String msg, String header) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("!");
+        alert.setHeaderText(header);
+        alert.setContentText(msg);
+        alert.show();
     }
 
     //  화면 전환 버튼 구현

@@ -27,7 +27,7 @@ public class Login implements Initializable{
     public void changeScene() {
         try {
             Parent nextScene
-                    = FXMLLoader.load(getClass().getResource("Clock.fxml"));
+                    = FXMLLoader.load(getClass().getResource("SceneShift.fxml"));
             Scene scene = new Scene(nextScene);
             Stage primaryStage = (Stage) changeBtn.getScene().getWindow();
             primaryStage.setScene(scene);

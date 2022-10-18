@@ -131,7 +131,7 @@ public class TimeController implements Initializable{
 	public void changeScene10() {
 		try {
 			Parent nextScene
-					= FXMLLoader.load(getClass().getResource("list.fxml"));
+					= FXMLLoader.load(getClass().getResource("List.fxml"));
 			Scene scene = new Scene(nextScene);
 			Stage primaryStage = (Stage) ListBtn1.getScene().getWindow();
 			primaryStage.setScene(scene);

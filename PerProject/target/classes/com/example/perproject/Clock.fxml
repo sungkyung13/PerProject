@@ -7,23 +7,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.TimeController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.TimeController">
    <children>
       <Pane prefHeight="600.0" prefWidth="75.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
-            <Button fx:id="changeBtn8" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" onAction="#changeScene8" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="ClockBtn1" layoutX="13.0" layoutY="191.0" mnemonicParsing="false" onAction="#changeScene8" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="alarm" />
                </styleClass>
             </Button>
-            <Button fx:id="changeBtn9" layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#changeScene9" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
-               <styleClass>
-                  <String fx:value="btn" />
-                  <String fx:value="browser" />
-               </styleClass>
-            </Button>
-            <Button fx:id="changeBtn10" layoutX="14.0" layoutY="512.0" mnemonicParsing="false" onAction="#changeScene10" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="ListBtn1" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#changeScene10" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="check" />

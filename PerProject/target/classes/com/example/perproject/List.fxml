@@ -14,23 +14,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
+<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
    <children>
       <Pane prefHeight="600.0" prefWidth="75.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
-            <Button fx:id="changeBt11" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" onAction="#changeScene11" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="ClockBtn" layoutX="13.0" layoutY="191.0" mnemonicParsing="false" onAction="#changeScene11" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="alarm" />
                </styleClass>
             </Button>
-            <Button fx:id="changeBtn12" layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#changeScene12" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
-               <styleClass>
-                  <String fx:value="btn" />
-                  <String fx:value="browser" />
-               </styleClass>
-            </Button>
-            <Button fx:id="changeBtn13" layoutX="14.0" layoutY="512.0" mnemonicParsing="false" onAction="#changeScene13" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn13" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#changeScene13" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="check" />

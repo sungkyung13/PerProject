@@ -13,7 +13,7 @@ public class UserDAO {
 
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM users WHERE id LIKE 'login%'";
+        String sql = "SELECT * FROM users";
 
         try {
             pstmt = conn.prepareStatement(sql);
