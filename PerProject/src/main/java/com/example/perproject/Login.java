@@ -80,8 +80,8 @@ public class Login implements Initializable{
         }catch (Exception e) {
             e.printStackTrace();
         }
-        if(cheakID.equals(ID)) {
-            if(cheakPW.equals(PW)) {
+        if(getID.equals(ID)) {
+            if(getPW.equals(PW)) {
                 try {
                     Parent login = FXMLLoader.load(getClass().getResource("/view/MainLayOut.fxml"));
                     Scene scene = new Scene(login);
