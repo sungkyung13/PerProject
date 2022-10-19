@@ -40,6 +40,7 @@ public class TodoData {
     public void loadTodoItems() throws IOException {
 
         todoItems = FXCollections.observableArrayList();
+        // 파일에서 입력
         Path path = Paths.get("TodoListItems.txt");
         BufferedReader br = Files.newBufferedReader(path);
 
@@ -50,11 +51,9 @@ public class TodoData {
                 String[] itemPieces = input.split("\t");
 
                 String TaskName = itemPieces[0];
-                String dateString = itemPieces[1];
-                String Details = itemPieces[2];
-                String Time = itemPieces[3];
-
-
+                String Details = itemPieces[1];
+                String Time = itemPieces[2];
+                String dateString = itemPieces[3];
 
                 LocalDate date = LocalDate.parse(dateString, formatter);
                 TodoItem todoItem = new TodoItem(TaskName, Details, Time, date);

@@ -39,7 +39,7 @@ public class List implements Initializable{
     }
 
 
-//
+
     @FXML
     private TextField TaskField;
 
@@ -95,10 +95,9 @@ public class List implements Initializable{
             return;
         }
 
-        TodoItem newItem = new TodoItem(TaskName, Details, Time, deadlineValue);
+        TodoItem newItem = ProcessResults();
         Items.add(newItem);
         todoListView.getSelectionModel().select(newItem);
-
     }
 
     public void alert(String msg, String header) {
@@ -261,6 +260,8 @@ public class List implements Initializable{
 
     }
 
+
+    // Today's Btn 구현
     @FXML
     public void handleFilterButton() {
         TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
@@ -288,7 +289,6 @@ public class List implements Initializable{
     }
 
  // 아래 부분 바 버튼
-
     @FXML
     private Button ClockBtn;
     public void changeScene11() {
