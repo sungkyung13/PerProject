@@ -19,7 +19,7 @@
                   <Font name="HYGothic-Extra" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="changeBtn" layoutX="89.0" layoutY="220.0" mnemonicParsing="false" onAction="#changeScene" prefWidth="125.0" stylesheets="@Design.css" text="Login" textFill="WHITE">
+            <Button fx:id="LoginBtn" layoutX="89.0" layoutY="220.0" mnemonicParsing="false" onAction="#changeToMain" prefWidth="125.0" stylesheets="@Design.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>

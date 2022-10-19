@@ -13,13 +13,13 @@
    <children>
       <Pane layoutX="506.0" layoutY="145.0" prefHeight="310.0" prefWidth="310.0" stylesheets="@Design.css">
          <children>
-            <TextField layoutX="27.0" layoutY="105.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter ID" stylesheets="@Design.css" />
+            <TextField fx:id="LoginId" layoutX="27.0" layoutY="105.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter ID" stylesheets="@Design.css" />
             <Label layoutX="102.0" layoutY="53.0" text="User Login">
                <font>
                   <Font name="HYGothic-Extra" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="changeBtn" layoutX="89.0" layoutY="220.0" mnemonicParsing="false" onAction="#changeScene" prefWidth="125.0" stylesheets="@Design.css" text="Login" textFill="WHITE">
+            <Button fx:id="LoginBtn" layoutX="89.0" layoutY="220.0" mnemonicParsing="false" onAction="#changeToMain" prefWidth="125.0" stylesheets="@Design.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
@@ -29,7 +29,7 @@
                   <String fx:value="BtShadow" />
                </styleClass>
             </Button>
-            <PasswordField layoutX="27.0" layoutY="158.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter PW" />
+            <PasswordField fx:id="LoginPw" layoutX="27.0" layoutY="158.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter PW" />
          </children>
          <styleClass>
             <String fx:value="white" />

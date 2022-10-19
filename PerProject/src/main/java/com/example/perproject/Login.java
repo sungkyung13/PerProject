@@ -11,10 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Login implements Initializable{
@@ -32,29 +29,10 @@ public class Login implements Initializable{
     @FXML
     private Button LoginBtn;
 
-    String ID;
-    String PW;
+    String id;
+    String pw;
 
-    // 입력 확인
-    public void Login() {
-        if (LoginId.getText().isEmpty() && LoginPw.getText().isEmpty()) {
-            alert("아이디와 비밀번호를 입력해 주세요.");
-        } else if (LoginId.getText().isEmpty()) {
-            alert("아이디를 입력해 주세요.");
-        } else if (LoginPw.getText().isEmpty()) {
-            alert("비밀번호를 입력해 주세요.");
-        } else  {
-            changeToMain();
-        }
-    }
-
-    public void alert(String text) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("!");
-        alert.setContentText(text);
-        alert.show();
-    }
-
+    // id, pw 검색
     public void changeToMain() {
         String getID = LoginId.getText();
         String getPW = LoginPw.getText();
@@ -64,7 +42,7 @@ public class Login implements Initializable{
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        String sql = "select * from information where id = '" + getID + "'";
+        String sql = "select * from Users WHERE id = '" + getID + "'";
 
         try {
             pstmt = con.prepareStatement(sql);
@@ -72,32 +50,44 @@ public class Login implements Initializable{
 
             while(rs.next()) {
                 String dataID = rs.getString("id");
-                String dataPW = rs.getString("password");
+                String dataPW = rs.getString("pw");
 
-                ID = dataID;
-                PW = dataPW;
+                id = dataID;
+                pw = dataPW;
+
             }
         }catch (Exception e) {
             e.printStackTrace();
         }
-        if(getID.equals(ID)) {
-            if(getPW.equals(PW)) {
+
+        //id, pw 입력 확인
+        if(getID.equals(id)) {
+            if(getPW.equals(pw)) {
                 try {
-                    Parent login = FXMLLoader.load(getClass().getResource("/view/MainLayOut.fxml"));
+                    Parent login = FXMLLoader.load(getClass().getResource("SceneShift.fxml"));
                     Scene scene = new Scene(login);
-                    Stage primaryStage = (Stage) changeMain.getScene().getWindow();
+                    Stage primaryStage = (Stage) LoginBtn.getScene().getWindow();
                     primaryStage.setScene(scene);
-                    scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+                    scene.getStylesheets().add(getClass().getResource("Design.css").toExternalForm());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }else {
-                alert("비밀번호를 다시 입력해주세요.");
+                alert("비밀번호를 다시 입력해주세요.", null);
             }
         }else {
-            alert("아이디를 다시 입력해주세요.");
+            alert("아이디를 다시 입력해주세요.", null);
         }
 
+    }
+
+    // 알림창 띄우기
+    public void alert(String msg, String header) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("!");
+        alert.setHeaderText(header);
+        alert.setContentText(msg);
+        alert.show();
     }
 
 
