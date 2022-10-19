@@ -109,4 +109,19 @@ public class Login implements Initializable{
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private Label MainBtn;
+    public void changeScene() {
+        try {
+            Parent nextScene
+                    = FXMLLoader.load(getClass().getResource("SceneShift.fxml"));
+            Scene scene = new Scene(nextScene);
+            Stage primaryStage = (Stage) MainBtn.getScene().getWindow();
+            primaryStage.setScene(scene);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
