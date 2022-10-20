@@ -220,7 +220,7 @@ public class List implements Initializable{
         TodoItem item = todoListView.getSelectionModel().getSelectedItem();
         ItemDetails.setText(item.getDetails());
         DeadLine.setText(item.getDeadline().toString());
-        Time.setText(item.getTime());
+        Time.setText(TimeField.getText());
     }
 
     // delete 알람 화면
@@ -238,7 +238,7 @@ public class List implements Initializable{
     }
 
 
- // 아래 부분 바 버튼
+ // 왼쪽 바 부분 화면 전환 버튼
     @FXML
     private Button ClockBtn;
     public void changeScene11() {

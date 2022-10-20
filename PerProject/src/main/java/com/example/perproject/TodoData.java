@@ -15,6 +15,7 @@ import java.util.Iterator;
 
 public class TodoData {
     private static TodoData instance = new TodoData();
+    private static String filename = "TodoListItem.txt";
 
     private ObservableList<TodoItem> todoItems;
     private DateTimeFormatter formatter;
@@ -41,7 +42,7 @@ public class TodoData {
 
         todoItems = FXCollections.observableArrayList();
         // 파일에서 입력
-        Path path = Paths.get("TodoListItems.txt");
+        Path path = Paths.get(filename);
         BufferedReader br = Files.newBufferedReader(path);
 
         String input;
@@ -69,7 +70,7 @@ public class TodoData {
 
     public void storeTodoItems() throws IOException {
 
-        Path path = Paths.get("TodoListItems.txt");
+        Path path = Paths.get(filename);
         BufferedWriter bw = Files.newBufferedWriter(path);
         try {
             Iterator<TodoItem> iter = todoItems.iterator();
