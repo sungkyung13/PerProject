@@ -32,7 +32,6 @@ public class SignUp {
 
         PreparedStatement pstmt = null;
         String sql = "INSERT INTO users(id, pw, name) VALUES(?,?,?)";
-
         try {
             pstmt = ((Connection) conn).prepareStatement(sql);
             pstmt.setString(1, id.getText());

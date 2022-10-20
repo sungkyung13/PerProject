@@ -54,7 +54,7 @@ public class List implements Initializable{
 
     private ObservableList<TodoItem> Items;
 
-    // add
+    // txt add
     public TodoItem ProcessResults() {
         String TaskName = TaskField.getText().trim();
         String Details = DetailsArea.getText().trim();
@@ -130,14 +130,8 @@ public class List implements Initializable{
     @FXML
     private ContextMenu listContextMenu;
 
-    @FXML
-    private ToggleButton filterToggleButton;
-
-    private FilteredList<TodoItem> filteredList;
-
     private Predicate<TodoItem> wantAllItems;
 
-    private Predicate<TodoItem> wantTodayItem;
 
 //마우스 오른쪽 눌러서 리스트 삭제
     public void initialize() {
@@ -172,25 +166,7 @@ public class List implements Initializable{
             }
         };
 
-        wantTodayItem = new Predicate<TodoItem>() {
-             @Override
-             public boolean test(TodoItem todoItem) {
-                 return (todoItem.getDeadline().equals(LocalDate.now()));
-             }
-        };
-
-        filteredList = new FilteredList<TodoItem>(TodoData.getInstance().getTodoItems(), wantAllItems);
-
-        SortedList<TodoItem> sortedList = new SortedList<TodoItem>(filteredList,
-                new Comparator<TodoItem>() {
-                     @Override
-                     public int compare(TodoItem o1, TodoItem o2) {
-                         return o1.getDeadline().compareTo(o2.getDeadline());
-                     }
-                });
-
         todoListView.setItems(TodoData.getInstance().getTodoItems());
-        todoListView.setItems(sortedList);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
 
@@ -244,7 +220,7 @@ public class List implements Initializable{
         TodoItem item = todoListView.getSelectionModel().getSelectedItem();
         ItemDetails.setText(item.getDetails());
         DeadLine.setText(item.getDeadline().toString());
-        Time.setText(item.getTime().toString());
+        Time.setText(item.getTime());
     }
 
     // delete 알람 화면
@@ -261,27 +237,6 @@ public class List implements Initializable{
 
     }
 
-
-    // Today's Btn 구현
-    @FXML
-    public void handleFilterButton() {
-        TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
-        if(filterToggleButton.isSelected()) {
-            filteredList.setPredicate(wantTodayItem);
-            if(filteredList.isEmpty()) {
-                ItemDetails.clear();
-                DeadLine.setText("");
-                Time.setText("");
-            } else if(filteredList.contains(selectedItem)) {
-                todoListView.getSelectionModel().select(selectedItem);
-            } else {
-                todoListView.getSelectionModel().selectFirst();
-            }
-        } else {
-            filteredList.setPredicate(wantAllItems);
-            todoListView.getSelectionModel().select(selectedItem);
-        }
-    }
 
  // 아래 부분 바 버튼
     @FXML

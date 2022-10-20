@@ -7,8 +7,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -18,13 +16,13 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="75.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
-            <Button fx:id="ClockBtn" layoutX="13.0" layoutY="191.0" mnemonicParsing="false" onAction="#changeScene11" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="ClockBtn" layoutX="13.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeScene11" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="alarm" />
                </styleClass>
             </Button>
-            <Button fx:id="changeBtn13" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#changeScene13" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
+            <Button fx:id="changeBtn13" layoutX="13.0" layoutY="352.0" mnemonicParsing="false" onAction="#changeScene13" prefHeight="50.0" prefWidth="50.0" stylesheets="@Design.css">
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="check" />
@@ -63,16 +61,6 @@
             </Label>
          </children>
       </HBox>
-      <ToggleButton fx:id="filterToggleButton" layoutX="106.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFilterButton" prefHeight="23.0" prefWidth="94.0" stylesheets="@Design.css" text="Today's Task" textFill="WHITE">
-         <styleClass>
-            <String fx:value="firstColor" />
-            <String fx:value="BtShadow" />
-            <String fx:value="round" />
-         </styleClass>
-         <tooltip>
-            <Tooltip text="Button Down: Show Today's items only. Button Up: Show all items" />
-         </tooltip>
-      </ToggleButton>
       <TextField fx:id="TaskField" layoutX="382.0" layoutY="415.0" prefHeight="22.0" prefWidth="220.0" promptText="What do you need to do?">
          <font>
             <Font name="Corbel" size="12.0" />
