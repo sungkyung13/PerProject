@@ -139,6 +139,7 @@ public class List implements Initializable{
 
     private Predicate<TodoItem> wantTodayItem;
 
+//마우스 오른쪽 눌러서 리스트 삭제
     public void initialize() {
         listContextMenu = new ContextMenu();
         MenuItem deleteMenuItem = new MenuItem("Delete");
@@ -280,12 +281,6 @@ public class List implements Initializable{
             filteredList.setPredicate(wantAllItems);
             todoListView.getSelectionModel().select(selectedItem);
         }
-    }
-
-    @FXML
-    public void handleExit() {
-        Platform.exit();
-
     }
 
  // 아래 부분 바 버튼

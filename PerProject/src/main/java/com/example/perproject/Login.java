@@ -32,7 +32,7 @@ public class Login implements Initializable{
     String id;
     String pw;
 
-    // id, pw 검색
+    // id, pw 존재하는지 데이터 베이스에서 조회
     public void changeToMain() {
         String getID = LoginId.getText();
         String getPW = LoginPw.getText();
@@ -60,14 +60,16 @@ public class Login implements Initializable{
             e.printStackTrace();
         }
 
-        //id, pw 입력 확인
+        //id, pw TextField 입력 확인
         if(getID.equals(id)) {
             if(getPW.equals(pw)) {
                 try {
+                    //화면 넘김
                     Parent login = FXMLLoader.load(getClass().getResource("SceneShift.fxml"));
                     Scene scene = new Scene(login);
                     Stage primaryStage = (Stage) LoginBtn.getScene().getWindow();
                     primaryStage.setScene(scene);
+                    //스타일 시트 연결
                     scene.getStylesheets().add(getClass().getResource("Design.css").toExternalForm());
                 } catch (Exception e) {
                     e.printStackTrace();
