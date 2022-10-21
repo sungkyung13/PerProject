@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
+<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="white" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perproject.List">
    <children>
       <Pane prefHeight="600.0" prefWidth="75.0" styleClass="firstColor" stylesheets="@Design.css">
          <children>
@@ -35,28 +35,30 @@
             <Font name="HYGothic-Extra" size="36.0" />
          </font>
       </Label>
-      <ListView fx:id="todoListView" layoutX="99.0" layoutY="111.0" onKeyPressed="#handleKeyPressed" onMouseClicked="#handleClickListView" prefHeight="458.0" prefWidth="263.0" stylesheets="@Design.css">
+      <ListView fx:id="todoListView" layoutX="99.0" layoutY="111.0" onMouseClicked="#handleClickListView" prefHeight="422.0" prefWidth="263.0" stylesheets="@Design.css">
+         <styleClass>
+            <String fx:value="shadow2" />
+            <String fx:value="round" />
+         </styleClass></ListView>
+      <TextArea fx:id="ItemDetails" layoutX="382.0" layoutY="111.0" prefHeight="248.0" prefWidth="501.0" stylesheets="@Design.css">
          <styleClass>
             <String fx:value="shadow2" />
             <String fx:value="round" />
          </styleClass>
-      </ListView>
-      <TextArea fx:id="ItemDetails" layoutX="385.0" layoutY="112.0" prefHeight="248.0" prefWidth="501.0">
-         <styleClass>
-            <String fx:value="shadow2" />
-            <String fx:value="round" />
-         </styleClass>
+         <font>
+            <Font name="Corbel" size="12.0" />
+         </font>
       </TextArea>
       <HBox layoutX="396.0" layoutY="332.0" prefHeight="18.0" prefWidth="220.0">
          <children>
             <Label text="DeadLine : ">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Italic" size="14.0" />
                </font>
             </Label>
             <Label fx:id="DeadLine">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Italic" size="14.0" />
                </font>
             </Label>
          </children>
@@ -66,8 +68,14 @@
             <Font name="Corbel" size="12.0" />
          </font>
       </TextField>
-      <TextArea fx:id="DetailsArea" layoutX="630.0" layoutY="415.0" prefHeight="154.0" prefWidth="255.0" />
-      <TextField fx:id="TimeField" layoutX="382.0" layoutY="464.0" prefHeight="22.0" prefWidth="220.0" />
+      <TextArea fx:id="DetailsArea" layoutX="630.0" layoutY="415.0" prefHeight="154.0" prefWidth="255.0" styleClass="round" stylesheets="@Design.css">
+         <font>
+            <Font name="Corbel" size="12.0" />
+         </font></TextArea>
+      <TextField fx:id="TimeField" layoutX="382.0" layoutY="464.0" prefHeight="22.0" prefWidth="220.0">
+         <font>
+            <Font name="Corbel" size="12.0" />
+         </font></TextField>
       <DatePicker fx:id="DateDeadLine" layoutX="382.0" layoutY="513.0" prefHeight="22.0" prefWidth="220.0" />
       <Label layoutX="382.0" layoutY="444.0" text="Time" />
       <Label layoutX="382.0" layoutY="492.0" text="DeadLine" />
@@ -79,16 +87,16 @@
             <String fx:value="thirdColor" />
          </styleClass>
       </Button>
-      <HBox layoutX="661.0" layoutY="332.0" prefHeight="18.0" prefWidth="220.0">
+      <HBox layoutX="652.0" layoutY="332.0" prefHeight="18.0" prefWidth="211.0">
          <children>
             <Label text="Time : ">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Italic" size="14.0" />
                </font>
             </Label>
             <Label fx:id="Time">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Italic" size="14.0" />
                </font>
             </Label>
          </children>
@@ -98,5 +106,12 @@
             <Font name="HYGothic-Extra" size="18.0" />
          </font>
       </Label>
+      <Button layoutX="164.0" layoutY="547.0" mnemonicParsing="false" onAction="#DeleteTodo" prefHeight="22.0" prefWidth="133.0" stylesheets="@Design.css" text="Delete" textFill="WHITE">
+         <styleClass>
+            <String fx:value="round2" />
+            <String fx:value="BtShadow" />
+            <String fx:value="thirdColor" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

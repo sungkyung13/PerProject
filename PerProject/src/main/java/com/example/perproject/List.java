@@ -108,6 +108,13 @@ public class List implements Initializable{
         alert.show();
     }
 
+    //Delete Button 구현
+    public void DeleteTodo() {
+        TodoItem item = todoListView.getSelectionModel().getSelectedItem();
+        if (item != null) {
+            TodoData.getInstance().deleteTodoItem(item);
+        }
+    }
 
 
 
@@ -127,25 +134,9 @@ public class List implements Initializable{
     @FXML
     private AnchorPane MainAnchorPane;
 
-    @FXML
-    private ContextMenu listContextMenu;
-
     private Predicate<TodoItem> wantAllItems;
 
-
-//마우스 오른쪽 눌러서 리스트 삭제
     public void initialize() {
-        listContextMenu = new ContextMenu();
-        MenuItem deleteMenuItem = new MenuItem("Delete");
-        deleteMenuItem.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                TodoItem item = todoListView.getSelectionModel().getSelectedItem();
-                deleteItem(item);
-            }
-        });
-
-        listContextMenu.getItems().addAll(deleteMenuItem);
         todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TodoItem>() {
             @Override
             public void changed(ObservableValue<? extends TodoItem> observable, TodoItem oldValue, TodoItem newValue) {
@@ -189,16 +180,6 @@ public class List implements Initializable{
                         }
                     }
                 };
-
-                cell.emptyProperty().addListener(
-                        (obs, wasEmpty, isNowEmpty) -> {
-                            if (isNowEmpty) {
-                                cell.setContextMenu(null);
-                            } else {
-                                cell.setContextMenu(listContextMenu);
-                            }
-                        });
-
                 return cell;
             }
         });
@@ -206,35 +187,11 @@ public class List implements Initializable{
 
 
     @FXML
-    public void handleKeyPressed(KeyEvent keyEvent) {
-        TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
-        if(selectedItem != null) {
-            if(keyEvent.getCode().equals(KeyCode.DELETE)) {
-                deleteItem(selectedItem);
-            }
-        }
-    }
-
-    @FXML
     public void handleClickListView() {
         TodoItem item = todoListView.getSelectionModel().getSelectedItem();
         ItemDetails.setText(item.getDetails());
         DeadLine.setText(item.getDeadline().toString());
         Time.setText(TimeField.getText());
-    }
-
-    // delete 알람 화면
-    public void deleteItem(TodoItem item) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Todo Item");
-        alert.setHeaderText("Delete item: " + item.getTaskName());
-        alert.setContentText("Are you sure?  Press OK to confirm, or cancel to Back out.");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if(result.isPresent() && (result.get() == ButtonType.OK)) {
-            TodoData.getInstance().deleteTodoItem(item);
-        }
-
     }
 
 

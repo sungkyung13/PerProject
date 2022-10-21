@@ -75,9 +75,11 @@ public class Login implements Initializable{
                     e.printStackTrace();
                 }
             }else {
+                //비밀번호 불일치시 나오는 알람
                 alert("비밀번호를 다시 입력해주세요.", null);
             }
         }else {
+            //아이디 불일치시 나오는 알람
             alert("아이디를 다시 입력해주세요.", null);
         }
 

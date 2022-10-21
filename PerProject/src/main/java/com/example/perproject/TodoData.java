@@ -41,7 +41,7 @@ public class TodoData {
     public void loadTodoItems() throws IOException {
 
         todoItems = FXCollections.observableArrayList();
-        // 파일에서 입력
+        // 파일에서 입력 받음
         Path path = Paths.get(filename);
         BufferedReader br = Files.newBufferedReader(path);
 
@@ -68,6 +68,7 @@ public class TodoData {
         }
     }
 
+    // To do 저장
     public void storeTodoItems() throws IOException {
 
         Path path = Paths.get(filename);
@@ -82,6 +83,7 @@ public class TodoData {
                         item.getTime(),
                         item.getDeadline().format(formatter)));
                 bw.newLine();
+                bw.flush();
             }
 
         } finally {
@@ -94,5 +96,4 @@ public class TodoData {
     public void deleteTodoItem(TodoItem item) {
         todoItems.remove(item);
     }
-
 }
