@@ -89,6 +89,7 @@ public class List {
             alert("날짜를 입력하세요", null);
             return;
         }
+        Items = FXCollections.observableArrayList();
 
         TodoItem newItem = ProcessResults();
         Items.add(newItem);
