@@ -31,12 +31,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
-public class List implements Initializable{
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Items = FXCollections.observableArrayList();
-        todoListView.setItems(Items);
-    }
+public class List {
 
 
 
