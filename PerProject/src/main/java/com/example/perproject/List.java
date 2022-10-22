@@ -186,6 +186,8 @@ public class List implements Initializable{
     }
 
 
+
+
     @FXML
     public void handleClickListView() {
         TodoItem item = todoListView.getSelectionModel().getSelectedItem();

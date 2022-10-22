@@ -68,22 +68,24 @@ public class TodoData {
         }
     }
 
-    // To do 저장
+    // To do 저장 되어 있는 요소 출력
     public void storeTodoItems() throws IOException {
 
+        //txt 파일 불러오기
         Path path = Paths.get(filename);
+        //txt 파일에서 출력
         BufferedWriter bw = Files.newBufferedWriter(path);
         try {
             Iterator<TodoItem> iter = todoItems.iterator();
-            while(iter.hasNext()) {
+            while(iter.hasNext() == true) {
                 TodoItem item = iter.next();
+                //item 뒤의 요소를 가져온다.
                 bw.write(String.format("%s\t%s\t%s\t%s",
                         item.getTaskName(),
                         item.getDetails(),
                         item.getTime(),
                         item.getDeadline().format(formatter)));
                 bw.newLine();
-                bw.flush();
             }
 
         } finally {

@@ -26,6 +26,7 @@ public class HelloApplication extends Application {
         try {
             TodoData.getInstance().storeTodoItems();
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
@@ -36,6 +37,7 @@ public class HelloApplication extends Application {
             TodoData.getInstance().loadTodoItems();
 
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
